@@ -1,0 +1,17 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+import time
+
+# Set up WebDriver
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+
+# Open Amazon website
+driver.get('https://www.amazon.com')
+
+# Optionally wait for a few seconds before closing
+time.sleep(5)
+
+# Close the browser
+driver.quit(
